@@ -1,0 +1,21 @@
+#include<stdio.h>
+int input (int *a, int *b)
+{
+	printf("enter the values you want to add");
+	scanf("%d %d", a, b);
+}
+int compute(int a, int b,int *sum)
+{
+	*sum= a+b;
+}
+void output(int a, int b, int sum)
+{
+	printf("%d + %d is %d",a,b, sum);
+}
+int main (void)
+{
+ int a,b,sum;
+ input(&a,&b);
+compute(a,b,&sum);
+output(a, b, sum);
+}
