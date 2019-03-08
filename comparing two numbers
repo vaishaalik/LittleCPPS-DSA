@@ -7,9 +7,9 @@ int input(int *x, int *y)
 int compute(int x, int y, int *small)
 {
 if(x>y)
-	*small=((x+y)-(x-y))/2;
+	*small=y;
 else
-	*small=((y+x)-(y-x))/2;
+	*small=x;
 }
 void output(int small)
 {
