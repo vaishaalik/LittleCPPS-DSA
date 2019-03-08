@@ -1,0 +1,27 @@
+#include<stdio.h>
+int input(int *a,int *b,int *c)
+{
+	printf("enter the three values:");
+	scanf("%d%d%d", a, b, c);
+}
+int compute(int a, int b,int c, int *smallest)
+{
+	if(a<b && a<c)
+	*smallest= a;
+	else if(b<a && b<c)
+	*smallest= b;
+	else if (c<a && c<b)
+	*smallest= c;
+	else  printf("the values are not unique");
+}
+void output(int smallest)
+{
+printf("%d", smallest);
+}
+int main(void)
+{
+int a,b,c,smallest;
+input(&a,&b,&c);
+compute(a,b,c,&smallest);
+output(smallest);
+}
