@@ -1,0 +1,24 @@
+#include <stdio.h>
+int input(int *x, int *y)
+{
+	printf("enter the two valus:");
+	scanf("%d %d", x, y);
+}
+int compute(int x, int y, int *small)
+{
+if(x>y)
+	*small=((x+y)-(x-y))/2;
+else
+	*small=((y+x)-(y-x))/2;
+}
+void output(int small)
+{
+	printf("%d", small);
+}
+int main(void)
+{
+int x,y,small;
+input(&x, &y);
+compute(x, y, &small);
+output(small);
+}
