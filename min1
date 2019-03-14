@@ -1,32 +1,39 @@
 #include<stdio.h>
-void input(int *a, int *b, int *c)
+void
+input (int *a, int *b, int *c)
 {
-	printf("enter the three values:");
-	scanf("%d%d%d", a, b, c);
+  printf ("enter the three values:");
+  scanf ("%d%d%d", a, b, c);
 }
-void compute(int a, int b, int c)
+
+void
+compute (int a, int b, int c)
 {
-	if(a<b && a<c)
-	{
-	printf("%d", a);
-	}
-	else if(b<a && b<c)
-	{
-	printf("%d", b);
-	}
-	else
-	{
-	printf("%d", c);
-	}
+  if (a < b && a < c)
+    {
+      printf ("%d", a);
+    }
+  else if (b < a && b < c)
+    {
+      printf ("%d", b);
+    }
+  else
+    {
+      printf ("%d", c);
+    }
 }
-void output(int minimum)
+
+void
+output (int minimum)
 {
-	printf("%d", minimum);
+  printf ("%d", minimum);
 }
-int main()
+
+int
+main ()
 {
-int a, b, c, minimum;
-input(&a,&b,&c);
-compute(a,b,c);
-output(minimum);
+  int a, b, c, minimum;
+  input (&a, &b, &c);
+  compute (a, b, c);
+  output (minimum);
 }
