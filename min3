@@ -1,22 +1,29 @@
 #include<stdio.h>
-void input(int *a, int *b, int *c)
+void
+input (int *a, int *b, int *c)
 {
-	printf("enter the three values:");
-	scanf("%d%d%d", a, b, c);
+  printf ("enter the three values:");
+  scanf ("%d%d%d", a, b, c);
 }
-void compute(int a, int b, int c, int *temp, int *min)
+
+void
+compute (int a, int b, int c, int *temp, int *min)
 {
-    *temp = (a < b)    ? a : b;
-    *min =  (c < *temp) ? c : *temp;
+  *temp = (a < b) ? a : b;
+  *min = (c < *temp) ? c : *temp;
 }
-void output(int min)
+
+void
+output (int min)
 {
-    printf ("The Minimum of the three is: %d", min);
+  printf ("The Minimum of the three is: %d", min);
 }
-int main()
+
+int
+main ()
 {
-int a, b, c,temp, min;
-input(&a,&b,&c);
-compute(a,b,c,&temp, &min);
-output(min);
+  int a, b, c, temp, min;
+  input (&a, &b, &c);
+  compute (a, b, c, &temp, &min);
+  output (min);
 }
