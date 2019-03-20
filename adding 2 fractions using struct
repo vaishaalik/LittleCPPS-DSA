@@ -1,8 +1,7 @@
 #include<stdio.h>
 struct frac
 {
-  int n;
-  int d;
+  int n,d;
 };
 int
 input (struct frac z)
