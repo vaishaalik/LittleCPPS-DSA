@@ -1,0 +1,134 @@
+#include<stdio.h>
+void add (int r1, int c1, int r2, int c2, int a[10][10], int b[10][10]);
+void sub (int r1, int c1, int r2, int c2, int a[10][10], int b[10][10]);
+void mul (int r1, int c1, int r2, int c2, int a[10][10], int b[10][10]);
+void
+main ()
+{
+  int r1, c1, r2, c2, a[10][10], b[10][10], c[10][10], i, j;
+  printf ("enter no. of rows and columns of matrix 1:");
+  scanf ("%d%d", &r1, &c1);
+  printf ("enter no. of rows and columns of matrix 2:");
+  scanf ("%d%d", &r2, &c2);
+  printf ("enter elements of matrix 1:");
+  for (i = 0; i < r1; i++)
+    {
+      for (j = 0; j < c1; j++)
+	{
+	  scanf ("%d", &a[i][j]);
+	}
+    }
+  printf ("enter elements of matrix 2:");
+  for (i = 0; i < r2; i++)
+    {
+      for (j = 0; j < c2; j++)
+	{
+	  scanf ("%d", &b[i][j]);
+	}
+    }
+  int ch;
+  printf
+    ("enter 1 for addition \n2 for subtraction \n3 for multiplication \n ");
+  scanf ("%d", &ch);
+  switch (ch)
+    {
+    case 1:
+      add (r1, c1, r2, c2, a, b);
+      break;
+    case 2:
+      sub (r1, c1, r2, c2, a, b);
+      break;
+    case 3:
+      mul (r1, c1, r2, c2, a, b);
+      break;
+    }
+}
+
+void
+add (int r1, int c1, int r2, int c2, int a[10][10], int b[10][10])
+{
+  int c[10][10], i, j;
+  if (r1 == r2 && c1 == c2)
+    {
+      for (i = 0; i < r1; i++)
+	{
+	  for (j = 0; j < c1; j++)
+	    {
+	      c[i][j] = a[i][j] + b[i][j];
+	    }
+	}
+      printf ("sum for entered matrices is:\n");
+      for (i = 0; i < r1; i++)
+	{
+	  for (j = 0; j < c1; j++)
+	    {
+	      printf ("%d\t", c[i][j]);
+	    }
+	  printf ("\n");
+	}
+    }
+  else
+    {
+      printf ("addition is not possible for the entered matrices");
+    }
+}
+
+void
+sub (int r1, int c1, int r2, int c2, int a[10][10], int b[10][10])
+{
+  int c[10][10], i, j;
+  if (r1 == r2 && c1 == c2)
+    {
+      for (i = 0; i < r1; i++)
+	{
+	  for (j = 0; j < c1; j++)
+	    {
+	      c[i][j] = a[i][j] - b[i][j];
+	    }
+	}
+      printf ("difference for entered matrices is: \n");
+      for (i = 0; i < r1; i++)
+	{
+	  for (j = 0; j < c1; j++)
+	    {
+	      printf ("%d\t", c[i][j]);
+	    }
+	  printf ("\n");
+	}
+    }
+  else
+    {
+      printf ("subtraction is not possible for the entered matrices");
+    }
+}
+
+void
+mul (int r1, int c1, int r2, int c2, int a[10][10], int b[10][10])
+{
+  int c[10][10], i, j, k, sum;
+  if (c1 != r2)
+    {
+      printf ("multiplication is not possible for the entered matrices");
+    }
+  else
+    {
+      for (i = 0; i < r1; i++)
+	{
+	  for (j = 0; j < c1; j++)
+	    {
+	      for (k = 0; k < r2; k++)
+		{
+		  c[i][j] += a[i][j] * b[k][j];
+		}
+	    }
+	}
+      for (i = 0; i < r1; i++)
+	{
+	  for (j = 0; j < c1; j++)
+	    {
+	      printf ("%d\t", c[i][j]);
+	    }
+	  printf ("\n");
+	}
+    }
+}
