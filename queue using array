@@ -1,0 +1,94 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 150
+int rear =0,i,item,front = -1,a[SIZE];
+int qfull ();
+void enqueue (int item);
+int qempty ();
+int dequeue ();
+void display ();
+void
+main ()
+{
+  int choice,x;
+  do
+    {
+      printf ("\nQUEUE OPERATIONS\n");
+      printf ("1.Enqueue\n2.Dequeue\n3.Display\n4.Exit\n");
+      printf ("enter your choice:");
+      scanf ("%d", &choice);
+      switch (choice)
+	{
+	case 1:
+	  if (qfull () == 1)
+	    {
+	      printf ("Queue is overflow\n");
+	    }
+	  else
+	    {
+	      printf ("enter element to enqueue:");
+	      scanf ("%d", &item);
+	      enqueue (item);
+	    }
+	  break;
+	case 2:
+	  if (qempty () == 1)
+	    {
+	      printf ("Queue is underflow\n");
+	    }
+	  else
+	    {
+	      x = dequeue ();
+	      printf ("the element deleted is:%d", x);
+	      break;
+	    }
+	case 3:
+	  display ();
+	  break;
+	case 4:
+	  exit (0);
+	  break;
+	}
+    }
+  while (choice != 4);
+}
+
+int
+qfull ()
+{
+  if (rear == SIZE - 1)
+    return 1;
+  else
+    return 0;
+}
+void enqueue (int item)
+{
+	a[rear]=item;
+ 	rear = rear + 1;
+}
+
+int
+qempty ()
+{
+  if ( front >= rear-1)
+    return 1;
+  else
+    return 0;
+}
+
+int
+dequeue ()
+{
+  int item = a[front+1];
+  front++;
+  return item;
+}
+
+void display ()
+{
+  printf ("The queue elements are:\n");
+  for (i = front+1; i<rear  ; i++)
+    {
+      printf ("%d ", a[i]);
+    }
+}
