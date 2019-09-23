@@ -1,0 +1,37 @@
+#include<stdio.h>
+#define MAX 3
+void create(int [3][3]);
+void linearsrch(int [3][3]);
+void main()
+{
+int a[3][3];
+printf("enter elements of the array:- \n" );
+create(a);
+linearsrch(a);
+}
+void create(int a[3][3])
+{
+int i,j;
+for(i=0; i< MAX ; i++)
+{
+for(j=0; j< MAX ; j++)
+{
+printf("enter element in position[%d][%d]:",i,j);
+scanf("%d",&a[i][j]);
+}
+}
+}
+void linearsrch(int a[3][3])
+{
+int item,i,j;
+printf("enter element to be searched for:");
+scanf("%d",&item);
+for(i=0; i< MAX ; i++)
+{
+for(j=0; j< MAX ; j++)
+if(item == a[i][j])
+{
+printf("the location of searched element is:[%d][%d] \n",i,j);
+}
+}
+}
