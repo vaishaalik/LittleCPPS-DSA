@@ -1,0 +1,42 @@
+#include<stdio.h>
+int binary(int a[],int l,int r, int x)
+{
+    int mid,h;
+    while(l<=h)
+    {
+        mid=(l+h)/2;
+        if(a[mid]==x)
+        {
+            return mid;
+        }
+        else if(a[mid]==x)
+        {
+            return binary(a,l,mid-1,x);
+        }
+        else
+        return 1;
+    }
+}
+int main()
+{
+    int a[20],i,x,h,l,n,result;
+    printf("enter the size of array:");
+    scanf("%d",&n);
+    printf("enter array elements:\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("enter element to be searched for:");
+    scanf("%d",&x);
+    result=binary(a,0,n-1,x);
+    if(result==1)
+    {
+        printf("element not found");
+    }
+    else
+    {
+        printf("element %d is found at [%d] location in the array",x,result+1);
+    }
+    return 0;
+}
