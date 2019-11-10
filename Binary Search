@@ -14,7 +14,7 @@ int binary(int a[],int l,int r, int x)
             return binary(a,l,mid-1,x);
         }
         else
-        return 1;
+        return -1;
     }
 }
 int main()
