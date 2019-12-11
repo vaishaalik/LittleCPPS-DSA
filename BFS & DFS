@@ -11,7 +11,6 @@ int pop();
 void main()
 {
 int n,i,s,ch,j;
-char c,dummy;
 printf("ENTER THE NUMBER VERTICES ");
 scanf("%d",&n);
 for(i=1;i<=n;i++)
@@ -58,7 +57,6 @@ default: printf("invalid option entered~");
 }
 }while(ch!=3);
 }
-
 //**************BFS(breadth-first search) code**************//
 void bfs(int s,int n)
 {
@@ -112,8 +110,6 @@ k=q[front++];
 return(k);
 }
 }
-
-
 //***************DFS(depth-first search) code******************//
 void dfs(int s,int n)
 {
